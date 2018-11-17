@@ -12,7 +12,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
-  - pytest tests --cov
+  - python -m pytest --cov tests/
   - coveralls
 
 # deploy new versions to PyPI
