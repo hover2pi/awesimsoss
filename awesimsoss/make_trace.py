@@ -13,7 +13,7 @@ import warnings
 
 import numpy as np
 import bokeh
-# import batman
+import batman
 from astropy.io import fits
 import webbpsf
 from svo_filters import svo
@@ -550,17 +550,17 @@ def psf_lightcurve(wavelength, psf, response, ld_coeffs, rp, time, tmodel, plot=
     flux = np.tile(psf, (len(time),1,1))
 
     # If there is a transiting planet...
-    # if ld_coeffs is not None and rp is not None and isinstance(tmodel, batman.transitmodel.TransitModel):
-    #
-    #     # Set the wavelength dependent orbital parameters
-    #     tmodel.u = ld_coeffs
-    #     tmodel.rp = rp
-    #
-    #     # Generate the light curve for this pixel
-    #     lightcurve = tmodel.light_curve(tmodel)
-    #
-    #     # Scale the flux with the lightcurve
-    #     flux *= lightcurve[:, None, None]
+    if ld_coeffs is not None and rp is not None and isinstance(tmodel, batman.transitmodel.TransitModel):
+
+        # Set the wavelength dependent orbital parameters
+        tmodel.u = ld_coeffs
+        tmodel.rp = rp
+
+        # Generate the light curve for this pixel
+        lightcurve = tmodel.light_curve(tmodel)
+
+        # Scale the flux with the lightcurve
+        flux *= lightcurve[:, None, None]
 
     # Apply the filter response to convert to [ADU/s]
     flux *= response

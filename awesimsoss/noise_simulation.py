@@ -98,8 +98,6 @@ from astropy.io import fits
 import numpy as np
 from scipy.ndimage.interpolation import zoom
 from astropy.stats.funcs import median_absolute_deviation as mad
-# import matplotlib.pyplot as plt # Handy for debugging
-
 
 warnings.filterwarnings('ignore')
 
