@@ -18,5 +18,5 @@ scipy==1.1.0
 # batman-package==2.1.0
 # exoctk
 
-pytest==4.0.0
+pytest==4.2.0
 pytest-runner==4.2
