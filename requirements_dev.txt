@@ -16,7 +16,7 @@ svo_filters==0.2.19
 scipy==1.1.0
 astroquery==0.4
 hotsoss==0.1.6
-webbpsf
+webbpsf==0.9.1
 batman-package==2.4.6
 
 pytest==4.0.0
